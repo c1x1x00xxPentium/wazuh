@@ -33,10 +33,10 @@ class KVDBTest : public ::testing::Test {
 protected:
     KVDBManager& kvdbManager = KVDBManager::getInstance();
 
-    KVDBTest() { // = default;
+    KVDBTest() {
     }
 
-    virtual ~KVDBTest() { // = default;
+    virtual ~KVDBTest() {
     }
 
     virtual void SetUp() {

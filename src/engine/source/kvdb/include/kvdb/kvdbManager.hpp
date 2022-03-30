@@ -22,7 +22,7 @@ public:
     void operator=(KVDBManager const&)  = delete;
     bool createDB(const std::string& Name, bool replace = true);
     bool createDBfromCDB(const std::filesystem::path& path, bool replace = true);
-    bool DeleteDB(const std::string &name);
+    bool deleteDB(const std::string &name);
     KVDB& getDB(const std::string& Name);
 };
 
