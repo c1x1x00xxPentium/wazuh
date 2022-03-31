@@ -191,7 +191,7 @@ class WazuhDBQueryGroup(WazuhDBQuery):
         pass
 
     def _add_sort_to_query(self):
-        # Consider the option to sort by count
+        # Consider the option of sort by count
         self.fields['count'] = 'count(id_group)'
         super()._add_sort_to_query()
 
