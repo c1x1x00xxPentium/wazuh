@@ -181,7 +181,7 @@ class WazuhDBQueryGroup(WazuhDBQuery):
         backend = WazuhDBBackend(query_format='global')
         WazuhDBQuery.__init__(self, offset=offset, limit=limit, table='`group`', sort=sort, search=search,
                               select=select,
-                              filters=filters, fields={'name': 'name', 'count': 'count(id_group)'},
+                              filters=filters, fields={'name': 'name'},
                               default_sort_field=default_sort_field, default_sort_order='ASC', query=query,
                               backend=backend, min_select_fields=min_select_fields, count=count, get_data=get_data,
                               rbac_negate=rbac_negate)
@@ -189,6 +189,11 @@ class WazuhDBQueryGroup(WazuhDBQuery):
 
     def _add_select_to_query(self):
         pass
+
+    def _add_sort_to_query(self):
+        # Consider the option to sort by count
+        self.fields['count'] = 'count(id_group)'
+        super()._add_sort_to_query()
 
     def _add_search_to_query(self):
         super()._add_search_to_query()
