@@ -52,7 +52,7 @@ public:
                    ROCKSDB_NAMESPACE::kDefaultColumnFamilyName);
 
     bool writeToTransaction(
-        const std::vector<std::pair<std::string, std::string>> pairsVector,
+        const std::vector<std::pair<std::string, std::string>>& pairsVector,
         const std::string &columnName =
             ROCKSDB_NAMESPACE::kDefaultColumnFamilyName);
 
